@@ -2,26 +2,30 @@
 
 Official MIT-licensed SDKs and Model Context Protocol (MCP) stdio bridge for **[StoreTechScan](https://storetechscan.com)** — the pay-as-you-go Ecommerce & Website Tech Stack API alternative to Wappalyzer ($450/mo Business API), Store Leads ($250–$950/mo), and BuiltWith ($295/mo).
 
+[![PyPI](https://img.shields.io/pypi/v/storetechscan?label=pypi%20sdk)](https://pypi.org/project/storetechscan/)
+[![Official MCP Registry](https://img.shields.io/badge/MCP%20Registry-com.storetechscan%2Fstoretechscan-blue)](https://registry.modelcontextprotocol.io/v0/servers?search=com.storetechscan/storetechscan)
+[![License: MIT](https://img.shields.io/badge/License-MIT-green.svg)](./LICENSE)
+
 - **Website Tech Stack + Passive DNS + Auditable `evidence[]`** (`POST /api/v1/inspect`, `profile="tech_stack"` or `"full"`): 200+ clean-room Web/SaaS/ecommerce fingerprints + parallel `MX / TXT / CNAME / NS / DMARC` backend inference.
 - **Live Single-Product URL Probe** (`POST /api/v1/product`): real-time title, brand, native currency, price, compare-at price, variants, and explicit public `available: true | false` for public Shopify, WooCommerce, BigCommerce, and Schema.org DTC product pages.
 - **Pay-As-You-Go, Zero Subscription**: One-time non-expiring credit packs starting at **$9 / 500 credits (+25 first-purchase bonus)**; `$0` billed for unreachable, 404/5xx, 429, or WAF-blocked checks. Free one-time 25-check trial per IP with no API key required.
 - **Commercial Embedding Permitted**: Explicitly permitted for commercial SaaS embedding, Clay/n8n/Make workflows, and AI agents with no mandatory attribution backlink.
 
-Links: [Website](https://storetechscan.com) · [API Quickstart](https://storetechscan.com/api) · [OpenAPI 3.1 Reference](https://storetechscan.com/docs/openapi) · [Pricing](https://storetechscan.com/pricing) · [Remote MCP Guide](https://storetechscan.com/integrations/mcp-server) · [2026 Empirical Benchmark (n=235)](https://storetechscan.com/reports/ecommerce-tech-stack-benchmark-2026)
+Links: [Website](https://storetechscan.com) · [PyPI (`storetechscan`)](https://pypi.org/project/storetechscan/) · [API Quickstart](https://storetechscan.com/api) · [OpenAPI 3.1 Reference](https://storetechscan.com/docs/openapi) · [Pricing](https://storetechscan.com/pricing) · [Remote MCP Guide](https://storetechscan.com/integrations/mcp-server) · [2026 Ecommerce Benchmark (n=235)](https://storetechscan.com/reports/ecommerce-tech-stack-benchmark-2026) · [2026 DNS & Product Probe Benchmark](https://storetechscan.com/reports/dns-and-product-url-benchmark-2026)
 
 ---
 
 ## Packages in This Repository
 
-| Package | Path | Runtime | Description |
-| --- | --- | --- | --- |
-| `storetechscan` (JS/TS) | [`packages/storetechscan-sdk-js`](./packages/storetechscan-sdk-js) | Node.js 18+ (zero deps) | Official JavaScript / TypeScript client for `/api/v1/inspect`, `/api/v1/product`, and `/api/v1/credits` |
-| `storetechscan` (Python) | [`packages/storetechscan-sdk-py`](./packages/storetechscan-sdk-py) | Python 3.9+ (stdlib only) | Zero-dependency Python client for `/api/v1/inspect`, `/api/v1/product`, and `/api/v1/credits` |
-| `storetechscan-mcp` | [`packages/storetechscan-mcp`](./packages/storetechscan-mcp) | Node.js 20+ (zero deps) | Local `stdio` MCP bridge to `https://storetechscan.com/mcp` |
+| Package | Path | Runtime | Registry / Install | Description |
+| --- | --- | --- | --- | --- |
+| `storetechscan` (Python) | [`packages/storetechscan-sdk-py`](./packages/storetechscan-sdk-py) | Python 3.9+ (stdlib only) | [PyPI `storetechscan`](https://pypi.org/project/storetechscan/) (`pip install storetechscan`) | Zero-dependency Python client for `/api/v1/inspect`, `/api/v1/product`, and `/api/v1/credits` |
+| `storetechscan` (JS/TS) | [`packages/storetechscan-sdk-js`](./packages/storetechscan-sdk-js) | Node.js 18+ (zero deps) | Source in repo | Official JavaScript / TypeScript client for `/api/v1/inspect`, `/api/v1/product`, and `/api/v1/credits` |
+| `storetechscan-mcp` | [`packages/storetechscan-mcp`](./packages/storetechscan-mcp) | Node.js 20+ (zero deps) | Remote HTTPS or stdio bridge | Local `stdio` MCP bridge to `https://storetechscan.com/mcp` |
 
 ---
 
-## Remote MCP Server (Zero Install)
+## Remote MCP Server (`https://storetechscan.com/mcp`)
 
 Connect Claude Desktop, Claude Code, Cursor, VS Code Copilot, Windsurf, or Antigravity directly to `https://storetechscan.com/mcp`:
 
@@ -37,6 +41,18 @@ Connect Claude Desktop, Claude Code, Cursor, VS Code Copilot, Windsurf, or Antig
 ```
 
 Pass `Authorization: Bearer zsk_live_YOUR_KEY` in headers for paid credits and calibrated AI scoring, or omit headers to try up to 25 checks free (one-time per IP).
+
+### Available MCP Tools (7)
+
+| Tool | Purpose |
+| --- | --- |
+| `inspect_domains` | Batch website tech stack (200+ signatures), passive DNS evidence, Shopify/product price stats, calibrated AI ICP fit, and generic role contacts |
+| `inspect_product_url` | Live single-product URL probe for price, native currency, compare-at price, variants, and `available: true \| false` (`$0` on WAF/error) |
+| `get_job` | Resume or fetch paginated rows for an existing inspection `job_id` |
+| `get_credits` | Check API key credit balance and ledger totals (`0` credits consumed) |
+| `get_ecommerce_benchmark_2026` | Read the public CC BY 4.0 235-domain empirical benchmark summary (`0` credits consumed) |
+| `buy_credits` | Generate a human-approved Waffo checkout link + `claim_token` for an API credit pack |
+| `claim_purchase` | Exchange a paid `claim_token` for a bearer `zsk_live_...` API key |
 
 ## Quick cURL Examples
 

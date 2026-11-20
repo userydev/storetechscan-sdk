@@ -26,7 +26,7 @@
   "homepage": "https://storetechscan.com/api",
   "repository": {
     "type": "git",
-    "url": "https://github.com/userydev/storetechscan-sdk.git",
+    "url": "git+https://github.com/userydev/storetechscan-sdk.git",
     "directory": "packages/storetechscan-sdk-js"
   },
   "keywords": [
