@@ -6,6 +6,7 @@ Official MIT-licensed SDKs and Model Context Protocol (MCP) stdio bridge for **[
 [![npm storetechscan](https://img.shields.io/npm/v/storetechscan?label=npm%20sdk)](https://www.npmjs.com/package/storetechscan)
 [![npm storetechscan-mcp](https://img.shields.io/npm/v/storetechscan-mcp?label=npm%20mcp)](https://www.npmjs.com/package/storetechscan-mcp)
 [![Official MCP Registry](https://img.shields.io/badge/MCP%20Registry-com.storetechscan%2Fstoretechscan-blue)](https://registry.modelcontextprotocol.io/v0/servers?search=com.storetechscan/storetechscan)
+[![Apify Store](https://img.shields.io/badge/Apify%20Store-ydev1999%2Fstoretechscan-00C27E)](https://apify.com/ydev1999/storetechscan)
 [![License: MIT](https://img.shields.io/badge/License-MIT-green.svg)](./LICENSE)
 
 - **Website Tech Stack + Passive DNS + Auditable `evidence[]`** (`POST /api/v1/inspect`, `profile="tech_stack"` or `"full"`): 200+ clean-room Web/SaaS/ecommerce fingerprints + parallel `MX / TXT / CNAME / NS / DMARC` backend inference.
@@ -13,7 +14,7 @@ Official MIT-licensed SDKs and Model Context Protocol (MCP) stdio bridge for **[
 - **Pay-As-You-Go, Zero Subscription**: One-time non-expiring credit packs starting at **$9 / 500 credits (+25 first-purchase bonus)**; `$0` billed for unreachable, 404/5xx, 429, or WAF-blocked checks. Free one-time 25-check trial per IP with no API key required.
 - **Commercial Embedding Permitted**: Explicitly permitted for commercial SaaS embedding, Clay/n8n/Make workflows, and AI agents with no mandatory attribution backlink.
 
-Links: [Website](https://storetechscan.com) · [npm (`storetechscan`)](https://www.npmjs.com/package/storetechscan) · [npm (`storetechscan-mcp`)](https://www.npmjs.com/package/storetechscan-mcp) · [PyPI (`storetechscan`)](https://pypi.org/project/storetechscan/) · [API Quickstart](https://storetechscan.com/api) · [OpenAPI 3.1 Reference](https://storetechscan.com/docs/openapi) · [Pricing](https://storetechscan.com/pricing) · [Remote MCP Guide](https://storetechscan.com/integrations/mcp-server) · [2026 Ecommerce Benchmark (n=235)](https://storetechscan.com/reports/ecommerce-tech-stack-benchmark-2026) · [2026 DNS & Product Probe Benchmark](https://storetechscan.com/reports/dns-and-product-url-benchmark-2026)
+Links: [Website](https://storetechscan.com) · [npm (`storetechscan`)](https://www.npmjs.com/package/storetechscan) · [npm (`storetechscan-mcp`)](https://www.npmjs.com/package/storetechscan-mcp) · [PyPI (`storetechscan`)](https://pypi.org/project/storetechscan/) · [Apify Actor](https://apify.com/ydev1999/storetechscan) · [API Quickstart](https://storetechscan.com/api) · [OpenAPI 3.1 Reference](https://storetechscan.com/docs/openapi) · [Pricing](https://storetechscan.com/pricing) · [Remote MCP Guide](https://storetechscan.com/integrations/mcp-server) · [2026 Ecommerce Benchmark (n=235)](https://storetechscan.com/reports/ecommerce-tech-stack-benchmark-2026) · [2026 DNS & Product Probe Benchmark](https://storetechscan.com/reports/dns-and-product-url-benchmark-2026)
 
 ---
 
@@ -100,6 +101,13 @@ curl -X POST https://storetechscan.com/api/v1/product \
 | Wappalyzer | $450 / mo (Business API) | Monthly plan required | Varies | Restricted on standard plans |
 | Store Leads | $250 / mo (Pro API) · $950 / mo (Product Search) | Recurring subscription | Database quota | Enterprise terms |
 | BuiltWith | $295 / mo (Basic) | Recurring subscription | Plan quota | Enterprise license |
+
+## Hosted Apify Actor
+
+Run batches without writing HTTP client code using the public Pay-Per-Event Apify Actor: **[`ydev1999/storetechscan`](https://apify.com/ydev1999/storetechscan)**.
+
+- **Modes**: `domains` (website tech stack + passive DNS + `evidence[]`, ecommerce enrichment, calibrated AI ICP fit) and `products` (live ecommerce product price, variants & stock)
+- **Pricing**: **`$5.00 / 1,000`** billable results (`inspection-result`, `User pays platform usage costs: No`) — **`$0`** billed for failed, unreachable, 429, or WAF checks
 
 ## License
 
